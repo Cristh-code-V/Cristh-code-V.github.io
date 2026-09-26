@@ -1,0 +1,93 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  /* ── Modo claro (corporativo, alto contraste) ── */
+  :root {
+    --canvas: 248 250 252; /* slate-50  */
+    --surface: 255 255 255;
+    --raised: 241 245 249; /* slate-100 */
+    --line: 226 232 240; /* slate-200 */
+    --line-strong: 203 213 225; /* slate-300 */
+    --ink: 15 23 42; /* slate-900 */
+    --body: 51 65 85; /* slate-700 */
+    --muted: 71 85 105; /* slate-600 */
+    --subtle: 100 116 139; /* slate-500 */
+    --accent: 21 128 61; /* green-700: contraste AA sobre blanco */
+    --accent-hover: 22 101 52; /* green-800 */
+    --accent-fg: 255 255 255;
+    --grid: 15 23 42;
+    --grid-alpha: 0.05;
+    color-scheme: light;
+  }
+
+  /* ── Modo oscuro (Dark Engineering, por defecto) ── */
+  .dark {
+    --canvas: 2 6 23; /* slate-950 */
+    --surface: 15 23 42; /* slate-900 */
+    --raised: 15 23 42;
+    --line: 30 41 59; /* slate-800 */
+    --line-strong: 51 65 85; /* slate-700 */
+    --ink: 248 250 252; /* slate-50  */
+    --body: 203 213 225; /* slate-300 */
+    --muted: 148 163 184; /* slate-400 */
+    --subtle: 100 116 139; /* slate-500 */
+    --accent: 34 197 94; /* green-500 */
+    --accent-hover: 74 222 128; /* green-400 */
+    --accent-fg: 2 6 23;
+    --grid: 148 163 184;
+    --grid-alpha: 0.06;
+    color-scheme: dark;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 5rem;
+  }
+  body {
+    @apply bg-canvas font-sans text-body antialiased transition-colors duration-300 selection:bg-accent/30 selection:text-ink;
+  }
+  :focus-visible {
+    @apply outline-none ring-2 ring-accent ring-offset-2 ring-offset-canvas;
+  }
+}
+
+@layer components {
+  .container-x {
+    @apply mx-auto w-full max-w-6xl px-5 sm:px-8;
+  }
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-md px-5 py-2.5 font-mono text-sm font-medium transition-colors duration-200;
+  }
+  .btn-primary {
+    @apply btn bg-accent text-accent-fg hover:bg-accent-hover;
+  }
+  .btn-ghost {
+    @apply btn border border-line-strong text-ink hover:border-accent hover:text-accent;
+  }
+  .icon-btn {
+    @apply inline-flex h-10 w-10 items-center justify-center rounded-md border border-line text-muted transition-colors hover:border-accent hover:text-accent;
+  }
+  .tag {
+    @apply rounded border border-line bg-raised px-2 py-0.5 font-mono text-xs text-body dark:bg-raised/60;
+  }
+  .card {
+    @apply rounded-xl border border-line bg-surface shadow-sm shadow-slate-900/5 dark:bg-surface/40 dark:shadow-none dark:backdrop-blur-sm;
+  }
+  .input {
+    @apply w-full rounded-md border border-line bg-canvas px-3.5 py-2.5 text-sm text-ink placeholder:text-subtle focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent disabled:opacity-60;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}
