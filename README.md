@@ -1,35 +1,68 @@
-Cristhian Mayorga — Portfolio Source Code
+<div align="center">
 
-Data Engineer & AI / Full-Stack Developer | GCI World 2026 (Matsuo Lab, Universidad de Tokio)
+# Cristhian Mayorga — Portfolio Source Code
 
-Este repositorio contiene el código fuente de mi portafolio profesional interactivo. Más que una simple página estática, esta aplicación fue diseñada como una SPA (Single Page Application) enfocada en rendimiento, mantenibilidad y accesibilidad, reflejando los estándares de ingeniería que aplico en entornos corporativos.
+**Data Engineer & AI / Full-Stack Developer**<br>
+GCI World 2026 · Matsuo Lab, Universidad de Tokio
 
-Ver Portafolio en Producción
+[![Ver portafolio](https://img.shields.io/badge/Ver_portafolio-cristh--code--v.github.io-22c55e?style=for-the-badge&logo=githubpages&logoColor=white)](https://cristh-code-v.github.io/)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Cristhian_Mayorga-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/cristhian-mayorga)
 
- Arquitectura y Decisiones Técnicas
+[![Deploy](https://github.com/Cristh-code-V/Cristh-code-V.github.io/actions/workflows/deploy.yml/badge.svg)](https://github.com/Cristh-code-V/Cristh-code-V.github.io/actions/workflows/deploy.yml)
+![React](https://img.shields.io/badge/React-18-61DAFB?logo=react&logoColor=black)
+![Vite](https://img.shields.io/badge/Vite-5-646CFF?logo=vite&logoColor=white)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-3-06B6D4?logo=tailwindcss&logoColor=white)
+![i18n](https://img.shields.io/badge/i18n-ES_·_EN_·_DE-334155)
 
-El proyecto fue construido bajo la premisa de mantener un ecosistema ligero pero altamente escalable (Serverless/Static), ideal para integraciones CI/CD continuas.
+</div>
 
-Core / Engine: React.js motorizado por Vite para tiempos de compilación ultrarrápidos y HMR.
+---
 
-Estilizado (UI/UX): Tailwind CSS configurado con un sistema de tokens de diseño semánticos. Implementación nativa de darkMode: 'class' para persistencia de temas sin parpadeo (FOUC).
+Este repositorio contiene el código fuente de mi portafolio profesional interactivo. Más que una simple página estática, es una **SPA (Single Page Application)** enfocada en rendimiento, mantenibilidad y accesibilidad, que refleja los estándares de ingeniería que aplico en entornos corporativos.
 
-Internacionalización (i18n): Sistema de diccionarios de estado integrado (ES, EN, DE) diseñado para escalabilidad sin depender de librerías pesadas externas, permitiendo la adaptación fluida a mercados extranjeros (Norteamérica y Europa).
+## 🏗️ Arquitectura y decisiones técnicas
 
-Seguridad y Contacto: Implementación de peticiones HTTP (fetch API) hacia endpoints seguros (Formspree) para la gestión de leads, manteniendo el correo real aislado de scrapers y previniendo fugas de datos en el frontend.
+El proyecto se construyó para mantener un ecosistema ligero pero escalable (**Serverless / Static**), ideal para integración y despliegue continuos.
 
-Observabilidad: Integración silenciosa de telemetría (Google Analytics 4) orientada a eventos.
+| Área | Implementación |
+|---|---|
+| **Core / Engine** | React.js sobre Vite, con compilaciones rápidas y HMR. |
+| **UI / UX** | Tailwind CSS con un sistema de *design tokens* semánticos. Modo oscuro/claro nativo (`darkMode: 'class'`) persistido y sin parpadeo (FOUC). |
+| **Internacionalización** | Diccionarios de estado propios (ES · EN · DE), escalables y sin librerías externas pesadas, pensados para mercados de Norteamérica y Europa. |
+| **Seguridad y contacto** | Peticiones HTTP (`fetch`) a endpoints seguros (Formspree) para la gestión de leads. El correo real queda aislado de scrapers y no se expone en el frontend. |
+| **Observabilidad** | Telemetría silenciosa con Google Analytics 4, orientada a eventos. |
+| **CI/CD** | Build y despliegue automáticos en GitHub Pages mediante GitHub Actions en cada `push` a `main`. |
 
- Sobre el Autor
+## 👨‍💻 Sobre el autor
 
-Aunque este repositorio demuestra mi capacidad para construir interfaces modernas y robustas, mi especialidad principal reside en el Backend, la Arquitectura de Datos y la Inteligencia Artificial.
+Aunque este repositorio demuestra mi capacidad para construir interfaces modernas y robustas, mi especialidad principal está en el **Backend**, la **Arquitectura de Datos** y la **Inteligencia Artificial**. En mi día a día diseño y opero ecosistemas complejos:
 
-En mi día a día, diseño y opero ecosistemas complejos:
+- **⚙️ Data Engineering & RPA:** orquestación de pipelines ETL, extracción masiva de datos (Web Scraping, Selenium, DrissionPage) y automatización de ERPs (Contífico) vía VPN/RDP.
+- **🧠 Inteligencia Artificial:** despliegue on-premise de LLMs locales (Ollama, Qwen) y modelos de visión documental (Donut, EasyOCR) para procesar reglas de negocio financieras (SRI, bancos) con políticas estrictas de *Zero-Data-Leak*.
+- **🖥️ Infraestructura:** administración de servidores Windows (IIS) y Linux, bases de datos relacionales (PostgreSQL, SQL Server) e implementaciones de ciberseguridad.
 
-Data Engineering & RPA: Orquestación de pipelines ETL, extracción masiva de datos (Web Scraping, Selenium, DrissionPage) y automatización de ERPs (Contífico) vía VPN/RDP.
+## 🚀 Ejecución local
 
-Inteligencia Artificial: Despliegue de LLMs locales (Ollama, Qwen) on-premise y modelos de visión documental (Donut, EasyOCR) para el procesamiento de reglas de negocio financieras (SRI, bancos) con políticas estrictas de Zero-Data-Leak.
+```bash
+npm install
+npm run dev      # http://localhost:5173/
+npm run build    # genera el sitio estático en /dist
+```
 
-Infraestructura: Administración de servidores Windows (IIS) y Linux, bases de datos relacionales (PostgreSQL, SQL Server) e implementaciones de ciberseguridad.
+## 📁 Estructura
 
-Diseñado y construido por Cristhian Mayorga. Despliegue automatizado mediante GitHub Pages.
+```
+src/
+├── components/   # Navbar, Hero, Skills, Projects, ContactForm, Footer…
+├── config/       # Datos de perfil y enlaces
+├── data/         # Proyectos y habilidades
+├── i18n/         # Diccionarios ES / EN / DE + hook useLanguage()
+├── theme/        # Contexto de modo oscuro / claro
+└── lib/          # Analítica (eventos GA4)
+```
+
+---
+
+<div align="center">
+<sub>Diseñado y construido por <b>Cristhian Mayorga</b> · Desplegado automáticamente en GitHub Pages</sub>
+</div>
