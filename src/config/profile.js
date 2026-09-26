@@ -3,7 +3,7 @@
 const BASE = import.meta.env.BASE_URL;
 
 export const profile = {
-  name: 'Cristhian Andres Mayorga Caiser',
+  name: 'Cristhian Mayorga',
   shortName: 'Cristhian Mayorga',
 
   linkedin: 'https://www.linkedin.com/in/cristhian-mayorga',
