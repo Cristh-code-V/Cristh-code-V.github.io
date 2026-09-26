@@ -1,28 +1,20 @@
-// ─────────────────────────────────────────────────────────────
-//  Datos personales y enlaces. Edita SOLO este archivo para
-//  actualizar LinkedIn, CV y Formspree.
-// ─────────────────────────────────────────────────────────────
+// Datos de perfil y enlaces externos del sitio.
 
-const BASE = import.meta.env.BASE_URL; // respeta el `base` de vite.config.js
+const BASE = import.meta.env.BASE_URL;
 
 export const profile = {
   name: 'Cristhian Andres Mayorga Caiser',
   shortName: 'Cristhian Mayorga',
-  initials: 'CM',
 
   linkedin: 'https://www.linkedin.com/in/cristhian-mayorga',
-  location: 'Guayaquil, Ecuador',
 
-  // Coloca tu PDF en /public/cv/ con este nombre exacto y cambia showCv a true
+  // CV descargable: se muestra solo si `showCv` es true y el archivo existe en /public/cv/
   cvUrl: `${BASE}cv/CV_Cristhian_Mayorga.pdf`,
   showCv: false,
 
-  // Crea un formulario gratis en https://formspree.io y pega aquí el ID (ej: "xyzabcd").
-  // Mientras esté vacío, el formulario mostrará un aviso y los canales directos.
+  // Endpoint del formulario de contacto (https://formspree.io/f/<id>)
   formspreeId: 'xaenpkev',
 
-  // Google Analytics 4: el ID de medición se configura en vite.config.js.
-
-  // Países donde operan los sistemas multi-tenant (códigos ISO para las banderas)
+  // Países donde operan los sistemas multi-tenant (ISO 3166-1 alfa-2)
   countries: ['EC', 'MX', 'VE', 'CO'],
 };

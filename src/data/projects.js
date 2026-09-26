@@ -1,10 +1,8 @@
 // Datos estructurales de los proyectos (no traducibles).
 // Los textos (título, problema, negocio, técnico) viven en src/i18n/translations.js.
 //
-// DIAGRAMAS: exporta tu diagrama de Excalidraw o Mermaid como .svg o .png,
-// guárdalo en /public/diagrams/ y asigna aquí la ruta relativa, ej:
-//   diagram: 'diagrams/atlas.svg'
-// Si `diagram` es null, la tarjeta simplemente no muestra el botón.
+// `diagram`: ruta relativa a /public de un diagrama de arquitectura (.svg / .png),
+// p. ej. 'diagrams/atlas.svg'. Con `null` la tarjeta no muestra el visor.
 
 export const projects = [
   {

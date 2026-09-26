@@ -46,7 +46,7 @@ export default function Hero() {
             {h.ctaProjects}
             <ArrowRightIcon className="h-4 w-4" />
           </a>
-          {/* Visible solo si showCv está activo Y existe el PDF (__CV_AVAILABLE__ lo define vite.config.js) */}
+          {/* __CV_AVAILABLE__ se define en vite.config.js según exista el PDF */}
           {profile.showCv && __CV_AVAILABLE__ && (
             <a href={profile.cvUrl} download onClick={() => trackEvent('cv_download')} className="btn-ghost">
               <DownloadIcon className="h-4 w-4" />
